@@ -9,17 +9,32 @@
     <style>
         /* Custom styles to match the precise design of the image */
         :root {
-            --bg-blue: #E0F2FE;
-            --primary-blue: #0EA5E9;
-            --primary-hover: #0284C7;
+
             --text-dark: #0F172A;
+            --text-color-white: #FFF;
             --shadow-custom: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            --bg-blue: #EFF6FF;
+            --primary-blue: #3B82F6;
+            --primary-hover: #2563EB;
+            --border-blue: #93C5FD;
         }
+
+        /* Update the timeline line color */
+        .timeline-line {
+            background-color: var(--border-blue);
+        }
+
+        /* Update the node icons to use the blue theme */
+        .node-icon {
+            border: 4px solid var(--border-blue);
+            color: var(--primary-blue);
+        }
+
         body {
             background-color: var(--bg-blue);
         }
         .timeline-container {
-            background-color: white;
+            background-color: var(--text-color-white);
             padding: 2rem;
             border-radius: 1.5rem;
             box-shadow: var(--shadow-custom);
@@ -31,7 +46,7 @@
             background-color: var(--primary-blue);
             padding: 0.75rem 1.5rem;
             border-radius: 9999px;
-            color: white;
+            color: var(--text-color-white);
             font-weight: 600;
             cursor: pointer;
             transition: background-color 0.2s ease;
@@ -92,9 +107,9 @@
         /* Style for the timeline graphic elements */
         .timeline-line {
             height: 4px;
-            background-color: #CBD5E1; /* slate-300 */
+            background-color: var(--border-blue);
             position: absolute;
-            top: 50%;
+            top: 67%;
             left: 0;
             right: 0;
             transform: translateY(-50%);
@@ -103,31 +118,33 @@
         .timeline-node {
             position: relative;
             z-index: 10;
+
         }
         .node-icon {
             width: 2rem;
             height: 2rem;
-            background-color: white;
-            border: 4px solid #CBD5E1; /* slate-300 */
-            border-radius: 9999px;
+            background-color: var(--primary-blue);
+            border: 4px solid var(--border-blue);
+            border-radius: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #64748B; /* slate-500 */
+            color: var(--text-color-white);
         }
         .current-node-icon {
             width: 2.5rem;
             height: 2.5rem;
-            border-color: #0F172A; /* slate-950 */
+            border-color: #0F172A;
             background-color: white;
             color: #0F172A;
-            border-width: 6px;
+            border-width: 25px;
+            border-radius: 100%;
         }
     </style>
 </head>
 <body class="flex flex-col items-center justify-center min-h-screen font-sans">
 
-<h1 class="text-xl font-bold text-slate-950 mb-1">OUR TIMELINE AND THE FUTURE</h1>
+<h1 class="text-xl font-bold text-slate-950 mb-5">OUR TIMELINE & THE FUTURE</h1>
 
 <div class="timeline-container relative overflow-x-auto">
     <h2 class="text-xl font-semibold text-slate-950 mb-1">Commit History</h2>
